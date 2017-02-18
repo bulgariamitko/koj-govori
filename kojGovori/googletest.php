@@ -22,7 +22,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
 	// create the Google client
 	$client = new Google_Service_Blogger($client);
 } else {
-	$redirect_uri = 'http://localhost:8888/oauth2callback.php';
+	$redirect_uri = 'http://nima.bg/darik/kojGovori/oauth2callback.php';
 	header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
 }
 

@@ -13,7 +13,7 @@ $client->setRedirectUri('http://nima.bg/darik/kojGovori/oauth2callback.php');
 $client->addScope(Google_Service_Blogger::BLOGGER);
 
 if ($client->isAccessTokenExpired()) {
-    $client->refreshToken(""); // ADD REFRESH TOKEN HERE
+    $client->refreshToken(""); // TODO: ADD REFRESH TOKEN HERE
     $_SESSION['access_token'] = $client->getAccessToken();
     $client->setAccessToken($_SESSION['access_token']);
 }
@@ -27,7 +27,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
 }
 
 // get only the first post so you can see if others posts from darik.bg and add who are missing
-$posts = $client->posts->listPosts("7835948596544337904", array("maxResults" => 1))->getItems();
+$posts = $client->posts->listPosts("", array("maxResults" => 1))->getItems(); //TODO: ADD BLOG ID
 
 // GET DATA FROM DARIK-RADIO PAGE
 // Get cURL resource
@@ -130,7 +130,7 @@ foreach ($urls[1] as $url) {
 
 // add posts in order
 for ($i=count($newPosts) - 1; $i >= 0; $i--) { 
-	$add = $client->posts->insert("7835948596544337904", $newPosts[$i]);
+	$add = $client->posts->insert("", $newPosts[$i]); //TODO: ADD BLOG ID
 
 	// echo "<pre>";
 	// print_r($add);

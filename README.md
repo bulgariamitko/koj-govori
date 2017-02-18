@@ -21,7 +21,7 @@ composer require google/apiclient:^2.0
 ```
 require_once '/path/to/your-project/vendor/autoload.php';
 ```
-- Много е важно да направим Cron Job, за да може предаванията да се добавят автоматично. Това е моят cron job, вашият може да е по-различен:
+- Много е важно да направим Cron Job, за да може предаванията да се добавят автоматично. Това е моят cron job, който зарежда файла всяка вечер в 12:30 през нощта, вашият може да е по-различен:
 ```
 30 0 * * * /usr/bin/php /var/www/darik/kojGovori/kojGovoriApi.php > /dev/null # JOB_ID_1
 ```

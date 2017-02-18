@@ -13,7 +13,7 @@ $client->setRedirectUri('http://nima.bg/darik/kojGovori/oauth2callback.php');
 $client->addScope(Google_Service_Blogger::BLOGGER);
 
 if ($client->isAccessTokenExpired()) {
-    $client->refreshToken("1/-3so61fTWNNCbQTM-8MJXvJgQshdX3QQIThUVY5OoQs");
+    $client->refreshToken(""); // ADD REFRESH TOKEN HERE
     $_SESSION['access_token'] = $client->getAccessToken();
     $client->setAccessToken($_SESSION['access_token']);
 }

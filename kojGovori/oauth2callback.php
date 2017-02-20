@@ -1,17 +1,9 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// require 'vendor/autoload.php'; // run this from command line | cronjob
-require 'vendor/autoload.php'; // run this from web
-
+require_once '../../vendor/autoload.php';
 
 $client = new Google_Client();
-// run this from command line | cronjob
-// $client->setAuthConfig('vendor/json/client_secret_549188524259-29t4od85do83qu7t20h042uaagaguhek.apps.googleusercontent.com.json');
-// run this from web
-$client->setAuthConfig('../../vendor/json/client_secret_549188524259-29t4od85do83qu7t20h042uaagaguhek.apps.googleusercontent.com.json');
+$client->setAuthConfig('CONSOLEAPIFILE.json');
 $client->setAccessType("offline");        // offline access
 $client->setApprovalPrompt('force');
 $client->setRedirectUri('http://nima.bg/darik/kojGovori/oauth2callback.php');

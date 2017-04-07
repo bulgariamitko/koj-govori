@@ -46,15 +46,15 @@ CURLOPT_URL => $url
 ```
   $findTitle = '/<title>(.+)<\/title>/'; // Заглавие
   $findAuthor = '/<a class="author".*>(.*)<\/a>/'; // Автор
-	$findImage = '/<img src="(\/media\/.+)" data-src=/'; //Снимка
-	$findContent = '/<div class="rte">(.*<\/p>)<\/div>/s'; // Съдържание
-	$findmp3 = '/<audio src="(.+)"><\/audio>/'; // MP3 файл
+  $findImage = '/<img src="(\/media\/.+)" data-src=/'; //Снимка
+  $findContent = '/<div class="rte">(.*<\/p>)<\/div>/s'; // Съдържание
+  $findmp3 = '/<audio src="(.+)"><\/audio>/'; // MP3 файл
 ```
-- Проверяваме нали вече този епизод не е добавен в блога:
+- Проверяваме дали вече този епизод не е добавен в блога:
 ```
 if (!empty($posts) && $srcTitle == $posts[0]->title) {
-		break;
-	}
+	break;
+}
 ```
 - Добавяме предаванията в списък, за да може после да ги добавим чрез цикъл, който да започне от пред-назад, за да се добавят предаванията в последователен ред:
 ```
